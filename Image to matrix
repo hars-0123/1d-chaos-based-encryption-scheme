@@ -1,0 +1,29 @@
+T = imread('cameraman.tif'); % converts image into matrix where M is a matrix %
+S = size(T) %gives size of the matrix %
+numberOfPixels = numel('cameraman.tif'); % gives the number of pixles in the image%
+M = numberOfPixels;
+disp(M);
+
+r=3.99;    %logistic map genarating random sequence %
+   
+   
+   x(1) = 0.5; % initial condition (can be anything from 0 to 1)
+  y(1)=0.5; % initial condition (can be anything from 0 to 1)
+    
+    for i = 2:S, % iterate
+        x(i) = r*x(i-1)*(1-x(i-1));
+        
+    end
+    x
+   
+   
+      z = ((x .* 10^12));
+      y = round(mod(z,255));
+     
+      y   
+      
+       S = sort(y);  % sorts array to ascending order%
+   S
+   
+   k = find(S)
+   
